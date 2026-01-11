@@ -1,0 +1,287 @@
+{
+  "categories": [
+    {
+      "name": "Health & Monitoring",
+      "items": [
+        {
+          "name": "Health Check",
+          "path": "/api/v1/health",
+          "desc": "Basic health check endpoint untuk monitoring service",
+          "status": "ready",
+          "params": {}
+        },
+        {
+          "name": "Readiness Check",
+          "path": "/api/v1/ready",
+          "desc": "Readiness probe untuk проверка service readiness",
+          "status": "ready",
+          "params": {}
+        },
+        {
+          "name": "System Metrics",
+          "path": "/api/v1/metrics",
+          "desc": "System metrics untuk monitoring dan observability",
+          "status": "ready",
+          "params": {}
+        }
+      ]
+    },
+    {
+      "name": "AI API ENDPOINT",
+      "items": [
+        {
+          "name": "GEMINI AI CHAT",
+          "path": "/api/v1/ai/gemini?text=&apikey=",
+          "desc": "Chat dengan Gemini AI menggunakan model flash-lite",
+          "status": "ready",
+          "params": {
+            "text": "Input text untuk Gemini AI",
+            "apikey": "Google Gemini API Key"
+          }
+        },
+        {
+          "name": "GEMINI WITH SYSTEM INSTRUCTION",
+          "path": "/api/v1/ai/gemini-with-system?text=&system=&apikey=",
+          "desc": "Gemini AI dengan custom system instruction",
+          "status": "ready",
+          "params": {
+            "text": "Input text",
+            "system": "System instruction",
+            "apikey": "Google Gemini API Key"
+          }
+        },
+        {
+          "name": "WAIFU2X IMAGE UPSCALE",
+          "path": "/api/v1/ai/waifu2x",
+          "desc": "Upscale gambar dengan AI Waifu2x (POST method)",
+          "status": "ready",
+          "params": {
+            "image": "URL atau Buffer gambar",
+            "style": "artwork/scans/photo (default: artwork)",
+            "noice": "none/low/medium/high/highest (default: medium)",
+            "upscaling": "none/1.6x/2x (default: 2x)"
+          }
+        },
+        {
+          "name": "WAIN SFW IMAGE GENERATION",
+          "path": "/api/v1/ai/wainsfw",
+          "desc": "Generate gambar dengan AI Wain SFW (POST method)",
+          "status": "ready",
+          "params": {
+            "prompt": "Deskripsi gambar yang diinginkan",
+            "model": "v140/v130/v120 (default: v140)",
+            "width": "Lebar gambar 256-2048 (default: 1024)",
+            "height": "Tinggi gambar 256-2048 (default: 1024)"
+          }
+        },
+        {
+          "name": "SORA2 VIDEO GENERATION",
+          "path": "/api/v1/ai/sora2",
+          "desc": "Generate video dari text menggunakan Sora2 AI (POST method)",
+          "status": "ready",
+          "params": {
+            "prompt": "Deskripsi video yang diinginkan",
+            "ratio": "portrait/landscape (default: portrait)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "DOWNLOADER API ENDPOINT",
+      "items": [
+        {
+          "name": "VIDEY DOWNLOADER",
+          "path": "/api/v1/downloader/videy?url=",
+          "desc": "Download video dari videy.co",
+          "status": "ready",
+          "params": {
+            "url": "URL video dari videy.co"
+          }
+        },
+        {
+          "name": "THREADS DOWNLOADER",
+          "path": "/api/v1/downloader/threads?url=",
+          "desc": "Download media dari threads.net",
+          "status": "ready",
+          "params": {
+            "url": "URL post dari threads.net"
+          }
+        },
+        {
+          "name": "AIO DOWNLOADER",
+          "path": "/api/v1/downloader/aio?url=&platform=",
+          "desc": "Multi-platform downloader (Instagram, TikTok, Twitter, YouTube, Facebook, Threads)",
+          "status": "ready",
+          "params": {
+            "url": "URL media yang akan di-download",
+            "platform": "instagram/tiktok/twitter/youtube/facebook/threads/auto (default: auto)"
+          }
+        },
+        {
+          "name": "XVIDEOS SEARCH",
+          "path": "/api/v1/downloader/xvideos/search?q=&page=",
+          "desc": "Search video di Xvideos",
+          "status": "ready",
+          "params": {
+            "q": "Kata kunci pencarian",
+            "page": "Halaman (default: 1)"
+          }
+        },
+        {
+          "name": "XVIDEOS VIDEO INFO",
+          "path": "/api/v1/downloader/xvideos/info?url=",
+          "desc": "Get video info dan download links dari Xvideos",
+          "status": "ready",
+          "params": {
+            "url": "URL video Xvideos"
+          }
+        },
+        {
+          "name": "XVIDEOS TRENDING",
+          "path": "/api/v1/downloader/xvideos/trending",
+          "desc": "Get trending videos dari Xvideos",
+          "status": "ready",
+          "params": {}
+        }
+      ]
+    },
+    {
+      "name": "TOOLS API ENDPOINT",
+      "items": [
+        {
+          "name": "SCREENSHOT WEB (CUSTOM)",
+          "path": "/api/v1/tools/ssweb?url=&width=&height=&fullPage=",
+          "desc": "Screenshot website dengan konfigurasi custom",
+          "status": "ready",
+          "params": {
+            "url": "URL website",
+            "width": "Lebar (default: 1280)",
+            "height": "Tinggi (default: 720)",
+            "fullPage": "true/false (default: false)"
+          }
+        },
+        {
+          "name": "SCREENSHOT WEB PC (16:9)",
+          "path": "/api/v1/tools/ssweb-pc?url=",
+          "desc": "Screenshot website dalam format desktop (1280x720)",
+          "status": "ready",
+          "params": {
+            "url": "URL website yang akan di-screenshot"
+          }
+        },
+        {
+          "name": "SCREENSHOT WEB HP (9:16)",
+          "path": "/api/v1/tools/ssweb-hp?url=",
+          "desc": "Screenshot website dalam format mobile (720x1280)",
+          "status": "ready",
+          "params": {
+            "url": "URL website yang akan di-screenshot"
+          }
+        },
+        {
+          "name": "NHENTAI SEARCH",
+          "path": "/api/v1/tools/nhentai/search?q=&page=",
+          "desc": "Search manga di nHentai",
+          "status": "ready",
+          "params": {
+            "q": "Kata kunci pencarian",
+            "page": "Halaman (default: 1)"
+          }
+        },
+        {
+          "name": "NHENTAI DETAIL",
+          "path": "/api/v1/tools/nhentai/detail?url=",
+          "desc": "Get detail manga dari nHentai",
+          "status": "ready",
+          "params": {
+            "url": "URL atau ID manga"
+          }
+        },
+        {
+          "name": "NHENTAI HOME",
+          "path": "/api/v1/tools/nhentai/home?page=",
+          "desc": "Get home page nHentai dengan gallery terbaru",
+          "status": "ready",
+          "params": {
+            "page": "Halaman (default: 1)"
+          }
+        },
+        {
+          "name": "NHENTAI IMAGES",
+          "path": "/api/v1/tools/nhentai/images?url=",
+          "desc": "Get list image URLs dari manga nHentai",
+          "status": "ready",
+          "params": {
+            "url": "URL atau ID manga"
+          }
+        },
+        {
+          "name": "RULE34 POSTS",
+          "path": "/api/v1/tools/rule34/posts?page=&tags=",
+          "desc": "Get posts dari Rule34",
+          "status": "ready",
+          "params": {
+            "page": "Halaman (default: 1)",
+            "tags": "Tags filter (opsional)"
+          }
+        },
+        {
+          "name": "RULE34 SEARCH",
+          "path": "/api/v1/tools/rule34/search?tags=&page=",
+          "desc": "Search posts di Rule34 by tags",
+          "status": "ready",
+          "params": {
+            "tags": "Tags yang dicari",
+            "page": "Halaman (default: 1)"
+          }
+        },
+        {
+          "name": "RULE34 POPULAR",
+          "path": "/api/v1/tools/rule34/popular?period=",
+          "desc": "Get popular posts dari Rule34",
+          "status": "ready",
+          "params": {
+            "period": "day/week/month (default: day)"
+          }
+        },
+        {
+          "name": "SOUNDGASM HOME",
+          "path": "/api/v1/tools/soundgasm/home",
+          "desc": "Get SoundGASM home page",
+          "status": "ready",
+          "params": {}
+        },
+        {
+          "name": "SOUNDGASM SEARCH",
+          "path": "/api/v1/tools/soundgasm/search?q=",
+          "desc": "Search audio di SoundGASM",
+          "status": "ready",
+          "params": {
+            "q": "Kata kunci pencarian"
+          }
+        },
+        {
+          "name": "SOUNDGASM AUDIO DETAILS",
+          "path": "/api/v1/tools/soundgasm/audio?url=",
+          "desc": "Get audio details dari SoundGASM",
+          "status": "ready",
+          "params": {
+            "url": "URL audio"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Info & Documentation",
+      "items": [
+        {
+          "name": "API Information",
+          "path": "/api/v1/info",
+          "desc": "Informasi lengkap tentang API ini",
+          "status": "ready",
+          "params": {}
+        }
+      ]
+    }
+  ]
+}
